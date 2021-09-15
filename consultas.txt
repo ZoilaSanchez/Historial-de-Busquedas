@@ -1,0 +1,3 @@
+# CONSULTAS PARA OBTENER EL TIEMPO #
+
+SELECT datetime(last_visit_time/1e6-11644473600,'unixepoch','localtime') AS time FROM urls
