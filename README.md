@@ -3,7 +3,7 @@ Objetivo: Aplicar los conceptos de analisis de datos
 ## Requisitos ##
     Instalar sqlite3 
 
-## Campos del Historial de Crhome ##
+## Campos del Historial de chrome ##
     id
     url
     title
@@ -12,5 +12,5 @@ Objetivo: Aplicar los conceptos de analisis de datos
     last_visit_time -- marca de tiempo esta formateada como la cantidad de microsengundos desde enero de 1601
     hidden
 ## Correr el proyecto ##
-    1. Tener cerrado el navegador Crhome
+    1. Tener cerrado el navegador chrome
     2. main.py
