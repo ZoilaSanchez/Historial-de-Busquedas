@@ -1,3 +1,12 @@
 # CONSULTAS PARA OBTENER EL TIEMPO #
 
 SELECT datetime(last_visit_time/1e6-11644473600,'unixepoch','localtime') AS time FROM urls
+cursor.execute("SELECT url FROM urls")
+urls = cursor.fetchall()
+print(urls,"\n")
+cursor.execute("SELECT title FROM urls")
+urls = cursor.fetchall()
+print(urls,"\n") """
+""" cursor.execute("SELECT url, title, visit_count FROM urls")
+urls = cursor.fetchall()
+print(urls,"\n")
