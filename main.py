@@ -14,10 +14,10 @@ from tkinter import messagebox as MessageBox
 #conexión a la bd
 connection = pymysql.connect(
 
-    host='localhost', #ip
-    user='root',
-    password='1234',
-    db='historialchrom'
+    host='bellouzr9e3zw1qlid1v-mysql.services.clever-cloud.com', #ip
+    user='upyun9kofbkvbewp',
+    password='8Vc5VVsqs1PFuxB2irAy',#'PfMkT'YACM9$Jn
+    db='bellouzr9e3zw1qlid1v'
 )
 ###conexion a mongo
 
@@ -75,11 +75,11 @@ try:
                     #print(emojis)
                     #print("aqui que pex"+letra)
                     if (letra=="'"):
-                        print("encontro comilla simple")
+                        #print("encontro comilla simple")
                         letra='!'
                         guardar=FALSE
                     elif(emojis):
-                        print(emojis)
+                        #print(emojis)
                         guardar=FALSE
                 if (guardar==TRUE):
                     theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[1]}',{id_usu})"
@@ -95,11 +95,11 @@ try:
                     #print(emojis)
                     #print("aqui que pex"+letra)
                     if (letra=="'"):
-                        print("encontro comilla simple")
+                        #print("encontro comilla simple")
                         letra='!'
                         guardar=FALSE
                     elif(emojis):
-                        print(emojis)
+                        #print(emojis)
                         guardar=FALSE
                        
                 if (guardar==TRUE):
@@ -120,9 +120,9 @@ try:
                 if(x[count] > yesterday):
                     print(x[count]) """
             count+=1
-        if(json['dia_visitado'] > yesterday):
+        #if(json['dia_visitado'] > yesterday):
           #  collection.insert_one(json)
-          print ("hooy")
+          #print ("hooy")
 
 except con.OperationalError:   
     MessageBox.showwarning("Alerta", "Cerrar el navegador antes")
