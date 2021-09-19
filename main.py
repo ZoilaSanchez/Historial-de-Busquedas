@@ -8,13 +8,15 @@ import datetime
 import regex as re
 import demoji
 demoji.download_codes()
+guardar=TRUE
+
 from tkinter import messagebox as MessageBox
 #conexión a la bd
 connection = pymysql.connect(
 
     host='localhost', #ip
     user='root',
-    password='199810',
+    password='1234',
     db='historialchrom'
 )
 ###conexion a mongo
@@ -65,11 +67,25 @@ try:
             #print(count)
             if (count==0):
                 #insertar en busqueda
-                theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[1]}',{id_usu})"
-                self.execute(theinsert2)
-                connection.commit()
-            elif(count==2):
-                guardar= TRUE
+                tituloenlista=list(x[1])
+                for letra in tituloenlista:
+                    eltitulo="".join(tituloenlista)
+                    emojis = demoji.findall(eltitulo)
+                    #Print converted emojis
+                    #print(emojis)
+                    #print("aqui que pex"+letra)
+                    if (letra=="'"):
+                        print("encontro comilla simple")
+                        letra='!'
+                        guardar=FALSE
+                    elif(emojis):
+                        print(emojis)
+                        guardar=FALSE
+                if (guardar==TRUE):
+                    theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[1]}',{id_usu})"
+                    self.execute(theinsert2)
+                    connection.commit()
+            elif(count==2 and guardar==TRUE):
                 urlenlista=list(x[0])
                 #print(urlenlista)
                 for letra in urlenlista:
