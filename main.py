@@ -20,36 +20,35 @@ connection = pymysql.connect(
     db='bellouzr9e3zw1qlid1v'
 )
 ###conexion a mongo
-
-client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority")
-print("Esta primera parte mostrará las bases de datos que esten incluyendo sus coleccions: ------------------")
-collection = client.datos.historial
-
 user=getpass.getuser() # obtener el usuario 
-self = connection.cursor()
-#Extraer el usuario       
-theselect="SELECT w.nombre AS Nombre FROM  usuario w WHERE w.Nombre=('"+user+"')"
-self.execute(theselect)
-#guardar datos de la consulta
-nombre_usuario=self.fetchone()# obtener un dato
-
-if(nombre_usuario==None):
-    print("INSERTAR USUARIO")
-    #insert para usuarios      
-    theinsert="insert into usuario(Nombre) values ('"+user+"')"
-    self.execute(theinsert)
-    connection.commit() 
-
-theselect="SELECT w.idUsuario AS id FROM  usuario w WHERE w.Nombre=('"+user+"')"
-self.execute(theselect)
-#guardar datos de la consulta
-id_usu=self.fetchone()[0] # obtener el dato del id
-print (id_usu)
-
 url='C:\\Users\\'+user+'\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History' # url para obtener el historial
 con = sqlite3.connect(url)
 cursor = con.cursor()
+
 try:  
+    client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority")
+    print("Esta primera parte mostrará las bases de datos que esten incluyendo sus coleccions: ------------------")
+    collection = client.datos.historial
+
+    self = connection.cursor()
+    #Extraer el usuario       
+    theselect="SELECT w.nombre AS Nombre FROM  usuario w WHERE w.Nombre=('"+user+"')"
+    self.execute(theselect)
+    #guardar datos de la consulta
+    nombre_usuario=self.fetchone()# obtener un dato
+
+    if(nombre_usuario==None):
+        print("INSERTAR USUARIO")
+        #insert para usuarios      
+        theinsert="insert into usuario(Nombre) values ('"+user+"')"
+        self.execute(theinsert)
+        connection.commit() 
+
+    theselect="SELECT w.idUsuario AS id FROM  usuario w WHERE w.Nombre=('"+user+"')"
+    self.execute(theselect) 
+    #guardar datos de la consulta
+    id_usu=self.fetchone()[0] # obtener el dato del id
+    print (id_usu)
     elements = ["url", "titulo", "dia_visitado"]   
     cursor.execute("SELECT url, title, datetime(last_visit_time/1e6-11644473600,'unixepoch','localtime') FROM urls")
     urls = cursor.fetchall()
