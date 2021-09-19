@@ -120,8 +120,8 @@ try:
                 if(x[count] > yesterday):
                     print(x[count]) """
             count+=1
-        #if(json['dia_visitado'] > yesterday):
-          #  collection.insert_one(json)
+        if(json['dia_visitado'] > yesterday):
+           collection.insert_one(json)
           #print ("hooy")
 
 except con.OperationalError:   

@@ -1,0 +1,12 @@
+## Pasos para formar el Script
+
+1. Abrir el programador de tareas
+2. Ir al menu accion y crear una tarea basica
+3. colocar el nombre. Ejemplo "Historial" y dar click en siguiente
+4. inicie la tarea diariamente
+5. Colocar el dia y fecha para iniciar por lo general hacerlo a las 11:59 pm 
+6. La accion a realizar es iniciar un programador
+7. Colocar la ruta en donde se encuentra el programa ejemplo: C:\Users\tu_usuario\Documents\GitHub\Historial-de-Busquedas\main.py
+8. Finalizar
+
+Todo estara ejecutandose automaticamente.
