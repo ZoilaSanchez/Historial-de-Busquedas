@@ -14,7 +14,7 @@ connection = pymysql.connect(
 
     host='localhost', #ip
     user='root',
-    password='1234',
+    password='199810',
     db='historialchrom'
 )
 ###conexion a mongo
@@ -25,17 +25,24 @@ collection = client.datos.historial
 
 user=getpass.getuser() # obtener el usuario 
 self = connection.cursor()
-#insert para usuarios      
-theinsert="insert into usuario(Nombre) values ('"+user+"')"
-self.execute(theinsert)
-connection.commit()
-#consulta del id max de usuarios
-theselect="select max(idUsuario) from usuario"
+#Extraer el usuario       
+theselect="SELECT w.nombre AS Nombre FROM  usuario w WHERE w.Nombre=('"+user+"')"
 self.execute(theselect)
 #guardar datos de la consulta
-tuplausuario=self.fetchall()
-#convertir tupla a lista
-listausuario=list(tuplausuario[0])
+nombre_usuario=self.fetchone()# obtener un dato
+
+if(nombre_usuario==None):
+    print("INSERTAR USUARIO")
+    #insert para usuarios      
+    theinsert="insert into usuario(Nombre) values ('"+user+"')"
+    self.execute(theinsert)
+    connection.commit() 
+
+theselect="SELECT w.idUsuario AS id FROM  usuario w WHERE w.Nombre=('"+user+"')"
+self.execute(theselect)
+#guardar datos de la consulta
+id_usu=self.fetchone()[0] # obtener el dato del id
+print (id_usu)
 
 url='C:\\Users\\'+user+'\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History' # url para obtener el historial
 con = sqlite3.connect(url)
@@ -58,25 +65,25 @@ try:
             #print(count)
             if (count==0):
                 #insertar en busqueda
-                theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[0]}',{listausuario[0]})"
+                theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[1]}',{id_usu})"
                 self.execute(theinsert2)
                 connection.commit()
             elif(count==2):
                 guardar= TRUE
-                urlenlista=list(x[1])
+                urlenlista=list(x[0])
                 #print(urlenlista)
                 for letra in urlenlista:
                     laurl="".join(urlenlista)
                     emojis = demoji.findall(laurl)
-                    # Print converted emojis
+                    #Print converted emojis
                     #print(emojis)
                     #print("aqui que pex"+letra)
                     if (letra=="'"):
-                        #print("encontro comilla simple")
+                        print("encontro comilla simple")
                         letra='!'
                         guardar=FALSE
                     elif(emojis):
-                        ##print(emojis)
+                        print(emojis)
                         guardar=FALSE
                        
                 if (guardar==TRUE):
@@ -90,7 +97,7 @@ try:
                    tuplaenlace=self.fetchall()
                     #convertir tupla a lista
                    listaenlace=list(tuplaenlace[0])
-                   theinsert2=f"insert into Usuario_has_Enlace(Enlace_idEnlaces,Usuario_idUsuario) values({listaenlace[0]},{listausuario[0]})"
+                   theinsert2=f"insert into Usuario_has_Enlace(Enlace_idEnlaces,Usuario_idUsuario) values({listaenlace[0]},{id_usu})"
                    self.execute(theinsert2)
                    connection.commit()
                 """ if(y == "dia_visitado"):
