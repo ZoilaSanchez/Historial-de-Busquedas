@@ -1,15 +1,9 @@
 import sqlite3
 import getpass
-from tkinter.constants import FALSE, TRUE
 import pymongo
 import datetime
 import pymysql
 import datetime
-import regex as re
-import demoji
-demoji.download_codes()
-guardar=TRUE
-
 from tkinter import messagebox as MessageBox
 #conexión a la bd
 connection = pymysql.connect(
@@ -37,9 +31,7 @@ try:
     #guardar datos de la consulta
     nombre_usuario=self.fetchone()# obtener un dato
 
-    if(nombre_usuario==None):
-        print("INSERTAR USUARIO")
-        #insert para usuarios      
+    if(nombre_usuario==None):     
         theinsert="insert into usuario(Nombre) values ('"+user+"')"
         self.execute(theinsert)
         connection.commit() 
@@ -48,11 +40,9 @@ try:
     self.execute(theselect) 
     #guardar datos de la consulta
     id_usu=self.fetchone()[0] # obtener el dato del id
-    print (id_usu)
     elements = ["url", "titulo", "dia_visitado"]   
-    cursor.execute("SELECT url, title, datetime(last_visit_time/1e6-11644473600,'unixepoch','localtime') FROM urls")
+    cursor.execute("SELECT url, title, datetime(last_visit_time/1000000-11644473600,'unixepoch','localtime') FROM urls")
     urls = cursor.fetchall()
-    print(urls,"\n")
     today = datetime.date.today()
     yesterday = today - datetime.timedelta(days=1)
     yesterday = str(yesterday) + " 00:00:00" #cada vez que se prenda la computadora subiremos a la bd los datos del historial del dia de ayer
@@ -62,67 +52,39 @@ try:
         count = 0
         for y in elements:
             json[y] = x[count]
-            #print(x[count])
-            #print(count)
-            if (count==0):
-                #insertar en busqueda
-                tituloenlista=list(x[1])
-                for letra in tituloenlista:
-                    eltitulo="".join(tituloenlista)
-                    emojis = demoji.findall(eltitulo)
-                    #Print converted emojis
-                    #print(emojis)
-                    #print("aqui que pex"+letra)
-                    if (letra=="'"):
-                        #print("encontro comilla simple")
-                        letra='!'
-                        guardar=FALSE
-                    elif(emojis):
-                        #print(emojis)
-                        guardar=FALSE
-                if (guardar==TRUE):
-                    theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{x[1]}',{id_usu})"
-                    self.execute(theinsert2)
-                    connection.commit()
-            elif(count==2 and guardar==TRUE):
-                urlenlista=list(x[0])
-                #print(urlenlista)
-                for letra in urlenlista:
-                    laurl="".join(urlenlista)
-                    emojis = demoji.findall(laurl)
-                    #Print converted emojis
-                    #print(emojis)
-                    #print("aqui que pex"+letra)
-                    if (letra=="'"):
-                        #print("encontro comilla simple")
-                        letra='!'
-                        guardar=FALSE
-                    elif(emojis):
-                        #print(emojis)
-                        guardar=FALSE
-                       
-                if (guardar==TRUE):
-                   theinsert2=f"insert into Enlace(URL,diavicitado) values('{laurl}','{x[2]}')"
-                   self.execute(theinsert2)
-                   connection.commit()
-                    #Consulta del id max de enlace
-                   theselect3="select max(idEnlaces) from Enlace"
-                   self.execute(theselect3)
-                    #guardar datos de la consulta
-                   tuplaenlace=self.fetchall()
-                    #convertir tupla a lista
-                   listaenlace=list(tuplaenlace[0])
-                   theinsert2=f"insert into Usuario_has_Enlace(Enlace_idEnlaces,Usuario_idUsuario) values({listaenlace[0]},{id_usu})"
-                   self.execute(theinsert2)
-                   connection.commit()
-                """ if(y == "dia_visitado"):
+            """ if(y == "dia_visitado"):
                 if(x[count] > yesterday):
                     print(x[count]) """
             count+=1
         if(json['dia_visitado'] > yesterday):
            collection.insert_one(json)
-          #print ("hooy")
-
+    # insertar en bd Relacional
+    for x in urls:
+            count = 0
+        #for y in elements:
+        #print(x[count] , yesterday )
+            if(x[count+2]>yesterday):
+                print("Fecha a evaluar es:" , yesterday ,x[count+2] )
+                
+                #print(x[count+2] )
+                titulo=x[count+1].replace("'","")
+                if(titulo!=""):
+                    print(x[count+1] )
+                    theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{titulo}',{id_usu})"
+                    self.execute(theinsert2)
+                    connection.commit()
+                    theinsert2=f"insert into Enlace(URL,diavicitado) values('{x[count]}','{x[count+2]}')"
+                    self.execute(theinsert2)
+                    connection.commit()
+                    #Consulta del id max de enlace
+                    theselect3="select max(idEnlaces) from Enlace"
+                    self.execute(theselect3)
+                    idenlace=self.fetchone()[0]
+                    print(idenlace)
+                    theinsert2=f"insert into Usuario_has_Enlace(Enlace_idEnlaces,Usuario_idUsuario) values({idenlace},{id_usu})"
+                    self.execute(theinsert2)
+                    connection.commit()
+            count+=1
 except con.OperationalError:   
     MessageBox.showwarning("Alerta", "Cerrar el navegador antes")
 
