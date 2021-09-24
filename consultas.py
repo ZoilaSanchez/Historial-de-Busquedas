@@ -2,6 +2,7 @@ import pymongo
 import regex as re
 import getpass
 import plotly.express as px
+import pandas as pd
 user=getpass.getuser() # obtener el usuario 
 url='C:\\Users\\'+user+'\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History' # url para obtener el historial
 client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority")
@@ -37,4 +38,8 @@ print("La cantidad de veces visitado la página de Youtube es ",contadorGoogle)
 random_x = [contadorFacebook, contadorLandivar, contadorYoutube, contadorGoogle]
 names = ['Facebook', 'Landivar', 'Youtube', 'Google'] 
 fig = px.pie(values=random_x, names=names)
+fig.show()
+df1 = pd.DataFrame(dict(time=['Total', 'Google']))
+df2 = pd.DataFrame(dict(market=[contador, contadorGoogle]))
+fig = px.bar(df1, x=df1.time, y=df2.market)
 fig.show()
