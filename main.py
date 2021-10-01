@@ -5,6 +5,7 @@ import datetime
 import pymysql
 import datetime
 from tkinter import messagebox as MessageBox
+import certifi
 #conexión a la bd
 connection = pymysql.connect(
 
@@ -20,7 +21,7 @@ con = sqlite3.connect(url)
 cursor = con.cursor()
 
 try:  
-    client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority", tlsCAFile=certifi.where())
     print("Esta primera parte mostrará las bases de datos que esten incluyendo sus coleccions: ------------------")
     collection = client.datos.historial
 
