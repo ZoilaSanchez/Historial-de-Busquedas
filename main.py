@@ -69,12 +69,14 @@ try:
                 
                 #print(x[count+2] )
                 titulo=x[count+1].replace("'","")
+                print(x[count])
+                url=x[count].replace("'","")
                 if(titulo!=""):
-                    print(x[count+1] )
+                    print(titulo)
                     theinsert2=f"insert into busqueda(Titulo,Usuario_idUsuario) values('{titulo}',{id_usu})"
                     self.execute(theinsert2)
                     connection.commit()
-                    theinsert2=f"insert into Enlace(URL,diavicitado) values('{x[count]}','{x[count+2]}')"
+                    theinsert2=f"insert into Enlace(URL,diavicitado) values('{url}','{x[count+2]}')"
                     self.execute(theinsert2)
                     connection.commit()
                     #Consulta del id max de enlace
