@@ -15,11 +15,12 @@ connection = pymysql.connect(
     db='bellouzr9e3zw1qlid1v'
 )
 ###conexion a mongo
-user=getpass.getuser() # obtener el usuario 
+user="zoili" # obtener el usuario 
+print(user)
 url='C:\\Users\\'+user+'\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History' # url para obtener el historial
 con = sqlite3.connect(url)
 cursor = con.cursor()
-
+user="lopez"
 try:  
     client = pymongo.MongoClient("mongodb+srv://m001-student:1234@cluster0.lo2p9.mongodb.net/library?retryWrites=true&w=majority", tlsCAFile=certifi.where())
     print("Esta primera parte mostrará las bases de datos que esten incluyendo sus coleccions: ------------------")
