@@ -124,8 +124,7 @@ for (r in 1:nrow(data01))  {
     }
   
 }
-library(ggplot2)
-library(scales)
+
 
 
 
@@ -133,28 +132,70 @@ library(scales)
 print(contador)
 print(titulo)
 
-laTabla = data.frame (cbind(titulo,Ene,feb,mar,abr,may,jun,jul,ags,sep,oct,nov,dic))
+
+#laTabla = data.frame(rbind(titulo,Ene,feb,mar,abr,may,jun,jul,ags,sep,oct,nov,dic)) # converir rn filas
+
+#print(laTabla)
+
+#laTabla = data.frame(cbind(titulo,Ene,feb,mar,abr,may,jun,jul,ags,sep,oct,nov,dic)) # converir en col
+
+#print(laTabla)
+laTabla = data.frame(titulo=titulo,ene=Ene,feb=feb,mar=mar,abr=abr,may=may,jun=jun,jul=jul,ags=ags,sep=sep,oct=oct,nov=nov,dic=dic) # converir rn filas
+
 print(laTabla)
 
-resumen_datos <- tapply(titulo, list(cilindros = titulo,
-                                     Ene = Ene,feb = feb,mar = mar,abr = abr,may = may,jun = jun,jul = jul,ags = ags,sep = sep,oct = oct,nov = nov,dic = dic)
-                        ,
-                        FUN = mean, na.rm = TRUE)
 
-print(resumen_datos)
-par(mar = c(5, 5, 10, 10))
+library(ggplot2)
+library(scales)
 
-barplot(resumen_datos, xlab = "Tipo de transmisión",
-        main = "Media CV",
-        col = rainbow(3),
-        beside = TRUE,
-        legend.text = rownames(resumen_datos),
-        args.legend = list(title = "Cilindros", x = "topright",
-                           inset = c(-0.20, 0)))
+dev.off()
+df <- data.frame(
+  group = c("Male", "Female", "Child"),
+  value = c(25, 25, 50)
+)
+head(df)
+library(ggplot2) # Cargar la librería gráfica "ggplot2"
+library(dplyr) # Cargar la librería de manipulación de dataframes "dplyr"
 
 
 
 
+datos <- data.frame(titulo=titulo,ene=Ene,feb=feb,mar=mar,abr=abr,may=may,jun=jun,jul=jul,ags=ags,sep=sep,oct=oct,nov=nov,dic=dic)
+datos
+
+
+a =ggplot(datos, aes("" ,Ene , fill = titulo)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_x_discrete()+ labs(title =" Paginas", x = "Mes Enero", y = "Fecuencia")
+a
+b = ggplot(datos, aes("" ,feb , fill = titulo)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_x_discrete()+ labs(title =" Paginas", x = "Mes feb", y = "Fecuencia")
+b
+c = ggplot(datos, aes("" ,sep , fill = titulo)) +
+  geom_bar(stat = "identity", position = "dodge") 
+c
+
+
+
+library(ggplot2) # Cargar la librería gráfica "ggplot2"
+library(dplyr) # Cargar la librería de manipulación de dataframes "dplyr"
+
+sexo <- c(rep("man",20),rep("woman",20),rep("man",20),rep("woman",20))
+valor <- 1:80
+grupo <- c(rep("spain",25),rep("italy",25),rep("portugal",30))
+
+datos <- data.frame(sexo=sexo, valor=valor, grupo=grupo)
+datos
+datos <- datos %>%
+  group_by(grupo, sexo) %>%
+  summarise(valor = sum(valor, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(grupo = factor(grupo, levels = .$grupo))
+
+ggplot(datos, aes(grupo, valor, fill = sexo)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_x_discrete()
 
 
 
@@ -164,4 +205,28 @@ barplot(resumen_datos, xlab = "Tipo de transmisión",
 
 
 
+meses <- c("ene","feb","mar","abr","may","jun","jul","ags","sep","oct","nov","dic")
+ggplot(data=laTabla, aes(x=titulo, y=Ene, fill=titulo)) + 
+  geom_bar(stat="identity", position="dodge")
 
+
+
+
+
+
+
+#a<-ggplot(laTabla,aes(x=titulo)) + geom_bar(fill="red2") + coord_flip()
+
+#a + theme_classic()
+
+#b<-ggplot(laTabla,aes(y=oct,x=titulo))+geom_bar(aes(fill=titulo))
+#b
+
+#ggplot(laTabla,aes(x=Ene))+geom_bar()+facet_wrap(~titulo,nrow =3 ) # escribe uno es por categoria 
+ 
+attach(laTabla)
+ 
+ggplot(laTabla,aes(x=titulo,y=Ene,Feb))+geom_bar(stat="identity",fill="lightblue")
+ 
+ 
+ 
