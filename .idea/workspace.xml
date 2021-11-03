@@ -5,23 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406ee360-7377-47bd-a875-858dee0729ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Historial-de-Busquedas.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AnalisisConR/RProject/Ejemplo1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AnalisisConR/RProject/Ejemplo1.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AnalisisConR/RProject/Generador cvs.R" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModuloGraficaDia.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModuloGraficaMes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafica1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grafica2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graficando.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ngrafia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/AnalisisConR/RProject/.Rhistory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/.RData" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/.Rhistory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/AGraficar/enlacesmasbuscados1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/AGraficar/graficaMes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/AGraficar/graficaSemanas.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/AGraficar/historial.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/AnalisisConR.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/Graficando En R.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/Pruebas.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/lectura.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/p2.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/p3.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/RProject.Rproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Unificado Tratamiento.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/enlacesGraficando.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/preuba.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iniciar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModuloPruebas/ProyectoGoogle/.Rhistory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModuloPruebas/s.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/in.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/.RData" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/.Rhistory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/AGraficar/enlacesmasbuscados1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/AGraficar/graficaMes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/AGraficar/graficaSemanas.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/AGraficar/historial.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/AnalisisConR.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/Ejemplo1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/Ejemplo1.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/Generador cvs.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/Graficando En R.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/Pruebas.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/RProject.Rproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/TratamientoDeDatos.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/enlacesGraficando.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/lectura.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/p2.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnalisisConR/RProject/p3.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoGoogle/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/AnalisisConR/Filtrado_Tratamiento/Pruebas/Generador cvs.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoGoogle/AnalisisdeDatos.Rproj" beforeDir="false" afterPath="$PROJECT_DIR$/ModuloPruebas/ProyectoGoogle/AnalisisdeDatos.Rproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoGoogle/Proyecto4R.R" beforeDir="false" afterPath="$PROJECT_DIR$/ModuloPruebas/ProyectoGoogle/Proyecto4R.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoGoogle/enlacesmasbuscados.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ModuloPruebas/ProyectoGoogle/enlacesmasbuscados.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoGoogle/enlacesmasbuscados1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ModuloPruebas/ProyectoGoogle/enlacesmasbuscados1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +71,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ModuloGraficaDia.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Iniciar.py" />
   </component>
-  <component name="RunManager" selected="Python.ModuloGraficaDia">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zoili\Documents\GitHub\Historial-de-Busquedas\ModuloPruebas" />
+      <recent name="C:\Users\zoili\Documents\GitHub\Historial-de-Busquedas\Modulo Graficas" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Iniciar">
     <configuration name="Unnamed (1)" type="CompoundRunConfigurationType">
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="CompoundRunConfigurationType">
       <method v="2" />
     </configuration>
-    <configuration name="ModuloGraficaDia" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="Iniciar" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Historial-de-Busquedas" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -64,7 +98,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ModuloGraficaDia.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Iniciar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -178,6 +212,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="in" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Historial-de-Busquedas" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\zoili\AppData\Local\Microsoft\WindowsApps\python3.7.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/in.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="interfaz" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Historial-de-Busquedas" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\zoili\AppData\Local\Microsoft\WindowsApps\python3.7.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interfaz.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ngrafia" type="PythonConfigurationType" factoryName="Python">
       <module name="Historial-de-Busquedas" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,7 +278,9 @@
     <list>
       <item itemvalue="Compound.Unnamed (1)" />
       <item itemvalue="Compound.Unnamed" />
-      <item itemvalue="Python.ModuloGraficaDia" />
+      <item itemvalue="Python.interfaz" />
+      <item itemvalue="Python.in" />
+      <item itemvalue="Python.Iniciar" />
       <item itemvalue="Python.ModuloGraficaMes" />
       <item itemvalue="Python.grafica2" />
       <item itemvalue="Python.grafica1" />
@@ -232,6 +310,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

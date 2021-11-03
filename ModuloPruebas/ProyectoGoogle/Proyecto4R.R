@@ -11,11 +11,7 @@ for (i in 1:length(historial$url)) {
   #View(separado[[1]][3])
   if (length(listurl) < 1){
     urlactual <- historial[i,4]
-   
-    my_data_char <- as.character(urlactual)    # Convert numeric to character
-
-    separado<-strsplit(my_data_char,                   # Applying strsplit to character
-             split = "/")
+    separado<-strsplit(urlactual, "/")
     regURL<-c(grep(separado[[1]][3], historial$url, value = TRUE))
     listurl <- c(separado[[1]][3]) 
     canturl <-c(length(regURL))
@@ -24,11 +20,7 @@ for (i in 1:length(historial$url)) {
     x<-2
     existe <- FALSE
     urlactual <- historial[i,4]
-    my_data_char <- as.character(urlactual)    # Convert numeric to character
-    
-    separado<-strsplit(my_data_char,                   # Applying strsplit to character
-                       split = "/")
-
+    separado<-strsplit(urlactual, "/")
     
     for(j in 1:length(listurl))
     { 
@@ -52,19 +44,12 @@ for (i in 1:length(historial$url)) {
   
 }
 
-canturl
-listurl
-
 losdatos <- as.data.frame(cbind(canturl,listurl))
 filtrardatosunicos<-unique(losdatos)
-ruta = getwd()
-rutaGuardar = paste(ruta, "AGraficar/enlacesmasbuscados1.txt", sep="/")
-sink(rutaGuardar)
-#mayores=subset(filtrardatosunicos,(as.numeric(canturl))>=0)
-for(i in 1:length(filtrardatosunicos$listurl)){
-
- # cat(mayores$canturl[i][1],",", mayores$listurl[i][1],'\n')
-  cat(filtrardatosunicos$canturl[i][1],",", filtrardatosunicos$listurl[i][1],'\n')
+sink("./enlacesmasbuscados1.txt")																
+mayores=subset(filtrardatosunicos,(as.numeric(canturl))>=1000)
+for(i in 1:length(mayores$listurl)){
+  cat(mayores$canturl[i][1],",", mayores$listurl[i][1],'\n')
 }
 sink()
 #----------------------------------------------------------------------------------
