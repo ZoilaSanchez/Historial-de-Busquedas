@@ -1,10 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 titulo = []
 top=[]
 meses=[]
 
-f = open("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/RProject/AGraficar/graficaMes.txt", "r")
+f = open("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/Filtrado_Tratamiento/AGraficar/graficaMes.txt", "r")
 for i, line in enumerate(f):
     if i % 2 == 0:
        titulo.append(line)
@@ -24,6 +25,7 @@ df = pd.DataFrame({titulo[0]: top[0],titulo[1]: top[1],titulo[2]: top[2],titulo[
               }, index=index)
 
 axes = df.plot.bar(rot=0, subplots=True,layout=(5,2),title ="Paginas mas visitadas por mes")
+print(top[0])
 axes[0, 1].set_title("")
 axes[1, 1].set_title("")
 axes[2, 1].set_title("")
@@ -34,4 +36,5 @@ axes[1, 0].set_title("")
 axes[2, 0].set_title("")
 axes[3, 0].set_title("")
 axes[4, 0].set_title("")
+
 plt.show()

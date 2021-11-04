@@ -2,6 +2,7 @@ import tkinter
 import pandas as pd
 import subprocess
 import matplotlib.pyplot as plt
+import numpy as np
 
 root = tkinter.Tk()
 root.title("Historial")
@@ -17,8 +18,8 @@ frame_fields2 = tkinter.Frame(root)
 
 def Ver_Scrip():
     print("Verificar si se puede leer el script")
-    subprocess.Popen("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/Filtrado_Tratamiento/preuba.R", shell=True)
-    stdout, stderr = proc.communicate() 
+    subprocess.Popen("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/Filtrado_Tratamiento/Unificado Tratamiento.R", shell=True)
+
     pass
 def Grafica_mes():
     print("generamos el mes")
@@ -100,38 +101,63 @@ def Grafica_dia():
     plt.show()
     pass
 def top_10():
-   print("generamos el top")
-   pass
+    print("generamos el top")
+    titulo = []
+    cantidad=[]
+
+    f = open("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/Filtrado_Tratamiento/AGraficar/enlacesmasbuscados.txt", "r")
+    for i, line in enumerate(f):
+        if i % 2 != 0:
+           titulo.append(line)
+           #print(line)
+        else:
+          #  print(line)
+            cantidad.append(int(line.strip()))
+
+
+    v = np.random.randint(0, 3, size=100)
+    plt.xlabel('Visitas')
+    plt.title('Páginas con visitas mayores a 100')
+
+    colors = plt.cm.jet(np.linspace(0,1,len(titulo)))
+    plt.barh(titulo, cantidad, color=colors[v])
+
+    for index, value in enumerate(cantidad):
+        plt.text(value, index,
+                 str(value),color="blue")
+
+    plt.show()
+    pass
 
 root.resizable(width=False, height=False)
 
-title = tkinter.Label(root, text="Bienvenido a Historial", font=("Consolas", 24))
+title = tkinter.Label(root, text="Bienvenido a Historial", font=("Consolas", 24,'bold'), fg = "red")
 title.grid(pady=(0, 500),padx=(0, 300))
 
 frame_fields.grid(row=0, column=0, padx=(0, 200), pady=(100, 0))
-start_date_lbl = tkinter.Label(frame_fields, text="* Modulo de Datos", font=("Consolas", 16))
+start_date_lbl = tkinter.Label(frame_fields, text="* Módulo de Datos", font=("Consolas", 16,'bold'))
 start_date_lbl.grid( padx=(20,50), pady=(0,500))
 
 
 frame_fields2.grid(row=0, column=0, padx=(0, 0), pady=(0, 200))
-scan_btn = tkinter.Button(frame_scan1, text="Generar", command=Ver_Scrip, height=1, width=8, font=("Consolas", 16))
+scan_btn = tkinter.Button(frame_scan1, text="Generar", command=Ver_Scrip, height=1, width=8, font=("Consolas", 16),bg = "gray", fg = "blue")
 scan_btn.grid(row=0, column=1, padx=(0, 325),pady=(0,400))
 
 
 
 frame_fields1.grid(row=0, column=1, padx=(0, 0), pady=(0, 200))
 
-start_date_lbl1 = tkinter.Label(frame_fields, text="* Modulo de Graficas", font=("Consolas", 16))
+start_date_lbl1 = tkinter.Label(frame_fields, text="* Módulo de Gráficas", font=("Consolas", 16,'bold'))
 start_date_lbl1.grid(column=1, row=0,padx=(0,150), pady=(0,500))
 
 frame_scan1.grid(row=0, column=0, padx=(0, 280), pady=(100, 0))
-scan_btn = tkinter.Button(frame_scan1, text="Mes", command=Grafica_mes, height=1, width=0, font=("Consolas", 16))
+scan_btn = tkinter.Button(frame_scan1, text="Mes", command=Grafica_mes, height=1, width=0, font=("Consolas", 16),bg = "gray", fg = "blue")
 scan_btn.grid(row=0, column=1, padx=(75, 0),pady=(0,400))
 
-scan_btn = tkinter.Button(frame_scan1, text="Día", command=Grafica_dia, height=1, width=0, font=("Consolas", 16))
+scan_btn = tkinter.Button(frame_scan1, text="Día", command=Grafica_dia, height=1, width=0, font=("Consolas", 16),bg = "gray", fg = "blue")
 scan_btn.grid(row=0, column=1, padx=(200, 0),pady=(0,400))
 
-scan_btn = tkinter.Button(frame_scan1, text="Top 10", command=top_10, height=1, width=0, font=("Consolas", 16))
+scan_btn = tkinter.Button(frame_scan1, text="Top 10", command=top_10, height=1, width=0, font=("Consolas", 16),bg = "gray", fg = "blue")
 scan_btn.grid(row=0, column=1, padx=(360, 0),pady=(0,400))
 
 root.mainloop()

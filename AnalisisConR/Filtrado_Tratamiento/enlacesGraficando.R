@@ -63,11 +63,11 @@ filtrardatosunicos<-unique(losdatos)
 ruta = getwd()
 rutaGuardar = paste(ruta, "AGraficar/enlacesmasbuscados1.txt", sep="/")
 sink(rutaGuardar)
-#mayores=subset(filtrardatosunicos,(as.numeric(canturl))>=0)
+mayores=subset(filtrardatosunicos,(as.numeric(canturl))>=500)
 for(i in 1:length(filtrardatosunicos$listurl)){
 
- # cat(mayores$canturl[i][1],",", mayores$listurl[i][1],'\n')
-  cat(filtrardatosunicos$canturl[i][1],",", filtrardatosunicos$listurl[i][1],'\n')
+ cat(mayores$canturl[i][1],",", mayores$listurl[i][1],'\n')
+ # cat(filtrardatosunicos$canturl[i][1],",", filtrardatosunicos$listurl[i][1],'\n')
 }
 sink()
 #----------------------------------------------------------------------------------

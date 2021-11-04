@@ -51,7 +51,7 @@ title(ylab="Ventas en miles de dólares", col.lab=rgb(0,0.5,0))
 
 #cargar el .csv con ruta relativa
 ruta = getwd()
-ruta = paste(ruta, "AGraficar/graficaMes.txt", sep="/")
+ruta = paste(ruta, "AGraficar/enlacesmasbuscados.txt", sep="/")
 print(ruta)
 
 
@@ -59,21 +59,48 @@ data01 <- read.table(file = ruta, sep="\n")
 print(data01)
 
 
-titulo <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-Ene <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-feb <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-mar <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-abr <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-may <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-jun <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-jul <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-ags <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-sep <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-oct <-c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-nov <-c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-dic <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-
+titulo <- c()
 contador=1
+for (r in 1:nrow(data01))  {
+  if(is.null(data01[r,1])){
+    print("vacio")
+  }
+  if(r%%2==0){
+    #print(paste("titulo", data01[r,1], " es columna impar no. ",r))
+    
+   
+      titulo[contador] <- data01[r,1]
+      contador=contador+1
+   
+  }
+  } 
+
+titulo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 contadorm=1
 for (r in 1:nrow(data01))  {

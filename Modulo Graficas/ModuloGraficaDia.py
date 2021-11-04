@@ -4,7 +4,7 @@ titulo = []
 top=[]
 semana=[]
 
-f = open("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/RProject/AGraficar/graficaSemanas.txt", "r")
+f = open("C:/Users/zoili/Documents/GitHub/Historial-de-Busquedas/AnalisisConR/Filtrado_Tratamiento/AGraficar/graficaSemanas.txt", "r")
 for i, line in enumerate(f):
     if i % 2 == 0:
        titulo.append(line)
@@ -34,4 +34,17 @@ axes[1, 0].set_title("")
 axes[2, 0].set_title("")
 axes[3, 0].set_title("")
 axes[4, 0].set_title("")
+plt.show()
+
+df = pd.DataFrame({titulo[0]: top[0],titulo[1]: top[1],titulo[2]: top[2],titulo[3]: top[3]
+                   ,titulo[4]: top[4]
+              }, index=index)
+
+axes = df.plot.bar(rot=0, subplots=True,layout=(5,1),title ="Paginas mas visitadas por Semana")
+axes[0, 0].set_title("")
+axes[1, 0].set_title("")
+axes[2, 0].set_title("")
+axes[3, 0].set_title("")
+axes[4, 0].set_title("")
+
 plt.show()

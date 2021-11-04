@@ -1,34 +1,20 @@
 www.facebook.com
 185, 79, 76, 156, 59, 88, 37, 
-www.youtube.com
-71, 187, 130, 222, 184, 137, 126, 
 www.google.com
 814, 804, 1014, 753, 617, 513, 602, 
+stackoverflow.com
+66, 41, 78, 65, 27, 13, 40, 
+www.youtube.com
+71, 187, 130, 222, 184, 137, 126, 
 mail.google.com
 179, 64, 158, 92, 103, 150, 152, 
 docs.google.com
 104, 93, 77, 143, 117, 37, 37, 
-moodleurl.url.edu.gt
-103, 161, 144, 196, 180, 97, 74, 
-url.edu.gt
-167, 252, 338, 300, 259, 201, 130, 
-github.com
-72, 88, 116, 92, 103, 54, 41, 
-outlook.office.com/mail
-23, 19, 13, 5, 0, 61, 16, 
-hangouts.google.com
-18, 16, 23, 14, 18, 14, 22, 
-translate.google.com
-111, 54, 94, 33, 29, 4, 0, 
-calendar.google.com
-26, 1, 32, 21, 2, 10, 19, 
-stackoverflow.com
-66, 41, 78, 65, 27, 13, 40, 
 accounts.google.com
 48, 36, 119, 19, 72, 66, 73, 
-meet.google.com
-35, 47, 48, 83, 48, 26, 11, 
-drive.google.com
-14, 27, 37, 53, 47, 26, 10, 
+moodleurl.url.edu.gt
+103, 161, 144, 196, 180, 97, 74, 
+github.com
+72, 88, 116, 92, 103, 54, 41, 
 web.microsoftstream.com
 4, 0, 308, 4, 9, 7, 0, 
